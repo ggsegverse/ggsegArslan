@@ -3,36 +3,29 @@
 \docType{data}
 \name{arslan}
 \alias{arslan}
-\alias{arslan_3d}
-\title{arslan atlas}
+\title{Arslan Multi-Level Parcellation Atlas}
 \format{
-An object of class \code{brain_atlas} of length 4.
-
-An object of class \code{ggseg3d_atlas} (inherits from \code{tbl_df}, \code{tbl}, \code{data.frame}) with 4 rows and 4 columns.
+A \link[ggseg.formats:ggseg_atlas]{ggseg.formats::ggseg_atlas} object (cortical).
 }
 \usage{
-arslan
-
-arslan_3d
+data(arslan)
 }
 \description{
-Add a short description of this atlas.
+Brain atlas for the Arslan multi-level parcellation of the cerebral cortex
+using resting-state fMRI with 50 regions. Contains both 2D polygon
+geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indices for
+\code{\link[ggseg3d:ggseg3d]{ggseg3d::ggseg3d()}}.
 }
 \examples{
 data(arslan)
-data(arslan_3d)
+arslan
 }
 \references{
-Arslan, S., & Rueckert, D. (2015, October). 
-    Multi-level parcellation of the cerebral cortex using resting-state fMRI. 
-    In International Conference on Medical Image Computing and Computer-Assisted 
-    Intervention (pp. 47-54). Springer, Cham.
-    (\href{https://link.springer.com/chapter/10.1007/978-3-319-24574-4_6}{Springer})
-    
-\itemize{
- \item{arslan}{ - arslan atlas}
- \item{arslan_3d}{ - arslan 3d mesh atlas}
+Arslan, S., & Rueckert, D. (2015, October).
+Multi-level parcellation of the cerebral cortex using resting-state fMRI.
+In International Conference on Medical Image Computing and
+Computer-Assisted Intervention (pp. 47-54). Springer, Cham.
+\doi{10.1007/978-3-319-24574-4_6}
 }
-}
-\concept{ggseg_atlases ggseg3d_atlases}
+\concept{ggseg_atlases}
 \keyword{datasets}

@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  fig.width = 10, 
+  fig.width = 10,
   fig.retina = 3
 )
 ```
@@ -22,66 +22,75 @@ knitr::opts_chunk$set(
 [![DOI](https://zenodo.org/badge/417483567.svg)](https://zenodo.org/badge/latestdoi/417483567)
 <!-- badges: end -->
 
-This package contains dataset for plotting the [arslan](add url here) atlas ggseg and ggseg3d. 
+This package contains dataset for plotting the
+[Arslan](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_6)
+atlas with ggseg and ggseg3d.
 
-Arslan, S., & Rueckert, D. (2015, October). Multi-level parcellation of the cerebral cortex using resting-state fMRI. In International Conference on Medical Image Computing and Computer-Assisted Intervention (pp. 47-54). Springer, Cham. [SpringerLink](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_6)
+Arslan, S., & Rueckert, D. (2015, October). Multi-level parcellation of
+the cerebral cortex using resting-state fMRI. In International Conference
+on Medical Image Computing and Computer-Assisted Intervention (pp. 47-54).
+Springer, Cham.
 
-To learn how to use these atlases, please look at the documentation for [ggseg](https://ggseg.github.io/ggseg/) and [ggseg3d](https://ggseg.github.io/ggseg3d)
+To learn how to use these atlases, please look at the documentation for
+[ggseg](https://ggseg.github.io/ggseg/) and
+[ggseg3d](https://ggseg.github.io/ggseg3d).
 
 ## Installation
 
-We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
-
-```{r eval = FALSE}
-# Enable this universe
-options(repos = c(
-    ggseg = 'https://ggseg.r-universe.dev',
-    CRAN = 'https://cloud.r-project.org'))
-
-# Install some packages
-install.packages('ggsegArslan')
-```
-
-You can install the released version of ggsegArslan from [GitHub](https://github.com/) with:
+You can install the released version of ggsegArslan from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("ggseg/ggsegArslan")
 ```
 
-```{r, fig.height=7}
-library(ggseg)
-library(ggseg3d)
+## Example
+
+```{r}
 library(ggsegArslan)
-
-plot(arslan) +
-  theme(legend.position = "bottom", 
-        legend.text = element_text(size = 9)) +
-  guides(fill = guide_legend(ncol = 6))
-
+library(ggseg)
+library(ggplot2)
 ```
 
-```{r "noneval", eval=FALSE}
-library(dplyr)
-ggseg3d(atlas = arslan_3d) %>% 
-  add_glassbrain() %>% 
+```{r, fig.height = 7}
+ggplot() +
+  geom_brain(
+    atlas = arslan,
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = arslan$palette, na.value = "grey") +
+  theme_void()
+```
+
+```{r "noneval", eval = FALSE}
+library(ggseg3d)
+
+ggseg3d(atlas = arslan) |>
   pan_camera("right lateral")
 ```
 
-```{r "orca", include=FALSE}
-library(dplyr)
-p <- ggseg3d(atlas = arslan_3d) %>%
-  add_glassbrain(hemisphere = "left")%>%
-  pan_camera("right lateral") %>%
-  plotly::add_annotations( text="Screen capture",
-                  legendtitle=TRUE, showarrow=FALSE,
-                  font = list(color = "#000000b4",
-                              family = 'sans serif',
-                              size = 50))
+```{r "orca", include = FALSE}
+library(ggseg3d)
+
+p <- ggseg3d(atlas = arslan) |>
+  add_glassbrain(hemisphere = "left") |>
+  pan_camera("right lateral") |>
+  plotly::add_annotations(
+    text = "Screen capture",
+    legendtitle = TRUE, showarrow = FALSE,
+    font = list(
+      color = "#000000b4",
+      family = "sans serif",
+      size = 50
+    )
+  )
 plotly::orca(p, "man/figures/README-3d-plot.png")
 ```
 
-```{r "incl", echo=FALSE}
+```{r "incl", echo = FALSE}
 knitr::include_graphics("man/figures/README-3d-plot.png")
 ```
 
