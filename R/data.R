@@ -5,10 +5,6 @@
 #' geometry for [ggseg::geom_brain()] and 3D vertex indices for
 #' [ggseg3d::ggseg3d()].
 #'
-#' @docType data
-#' @name arslan
-#' @usage data(arslan)
-#' @keywords datasets
 #' @family ggseg_atlases
 #'
 #' @references Arslan, S., & Rueckert, D. (2015, October).
@@ -17,8 +13,8 @@
 #'   Computer-Assisted Intervention (pp. 47-54). Springer, Cham.
 #'   \doi{10.1007/978-3-319-24574-4_6}
 #'
-#' @format A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @export
 #' @examples
-#' data(arslan)
-#' arslan
-"arslan"
+#' arslan()
+arslan <- function() .arslan
