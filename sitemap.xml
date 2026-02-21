@@ -1,24 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/arslan.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://ggseg.github.io/ggsegArslan/404.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/LICENSE-text.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/LICENSE.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/authors.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/copilot-instructions.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/index.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/news/index.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/reference/arslan.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/reference/ggsegArslan-package.html</loc></url>
+<url><loc>https://ggseg.github.io/ggsegArslan/reference/index.html</loc></url>
 </urlset>
+
