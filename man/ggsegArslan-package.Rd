@@ -13,8 +13,8 @@ Arslan multi-level parcellation atlas for the 'ggseg' ecosystem. Provides a unif
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/ggseg/ggsegArslan}
-  \item Report bugs at \url{https://github.com/ggseg/ggsegArslan/issues}
+  \item \url{https://github.com/ggsegverse/ggsegArslan}
+  \item Report bugs at \url{https://github.com/ggsegverse/ggsegArslan/issues}
 }
 
 }

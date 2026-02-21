@@ -11,7 +11,8 @@ Description: Arslan multi-level parcellation atlas for the 'ggseg' ecosystem.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends:
-    R (>= 3.5),
+    R (>= 3.5)
+Imports:
     ggseg.formats
 Suggests:
     ggseg,

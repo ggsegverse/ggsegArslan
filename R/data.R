@@ -14,6 +14,7 @@
 #'   \doi{10.1007/978-3-319-24574-4_6}
 #'
 #' @return A [ggseg.formats::ggseg_atlas] object (cortical).
+#' @import ggseg.formats
 #' @export
 #' @examples
 #' arslan()
