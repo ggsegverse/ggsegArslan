@@ -5,6 +5,7 @@ format: gfm
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r}
+#| label: setup
 #| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -49,13 +50,14 @@ remotes::install_github("ggseg/ggsegArslan")
 ## Example
 
 ```{r}
-#| label: chunk-2
+#| label: libraries
 library(ggsegArslan)
 library(ggseg)
 library(ggplot2)
 ```
 
 ```{r}
+#| label: 2d-plot
 #| fig-height: 7
 ggplot() +
   geom_brain(
@@ -78,23 +80,14 @@ ggseg3d(atlas = arslan()) |>
 ```
 
 ```{r}
-#| label: orca
+#| label: 3d-snapshot
 #| include: false
+#| eval: !expr (file.exists(Sys.which("chrome")) || file.exists(Sys.which("chromium"))) && !nzchar(Sys.getenv("CI"))
 library(ggseg3d)
 
-p <- ggseg3d(atlas = arslan()) |>
-  add_glassbrain(hemisphere = "left") |>
+ggseg3d(atlas = arslan()) |>
   pan_camera("right lateral") |>
-  plotly::add_annotations(
-    text = "Screen capture",
-    legendtitle = TRUE, showarrow = FALSE,
-    font = list(
-      color = "#000000b4",
-      family = "sans serif",
-      size = 50
-    )
-  )
-snapshot_brain("man/figures/README-3d-plot.png")
+  snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
 ```{r}
