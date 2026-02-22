@@ -1,10 +1,11 @@
 ---
-output: github_document
+format: gfm
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r}
+#| include: false
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -48,12 +49,14 @@ remotes::install_github("ggseg/ggsegArslan")
 ## Example
 
 ```{r}
+#| label: chunk-2
 library(ggsegArslan)
 library(ggseg)
 library(ggplot2)
 ```
 
-```{r, fig.height = 7}
+```{r}
+#| fig-height: 7
 ggplot() +
   geom_brain(
     atlas = arslan(),
@@ -65,14 +68,18 @@ ggplot() +
   theme_void()
 ```
 
-```{r "noneval", eval = FALSE}
+```{r}
+#| label: noneval
+#| eval: false
 library(ggseg3d)
 
 ggseg3d(atlas = arslan()) |>
   pan_camera("right lateral")
 ```
 
-```{r "orca", include = FALSE}
+```{r}
+#| label: orca
+#| include: false
 library(ggseg3d)
 
 p <- ggseg3d(atlas = arslan()) |>
@@ -87,10 +94,12 @@ p <- ggseg3d(atlas = arslan()) |>
       size = 50
     )
   )
-plotly::orca(p, "man/figures/README-3d-plot.png")
+snapshot_brain("man/figures/README-3d-plot.png")
 ```
 
-```{r "incl", echo = FALSE}
+```{r}
+#| label: incl
+#| echo: false
 knitr::include_graphics("man/figures/README-3d-plot.png")
 ```
 
