@@ -1,10 +1,21 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # ggsegArslan
 
 <!-- badges: start -->
-
 [![R-CMD-check](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml)
 [![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegArslan)](https://ggsegverse.r-universe.dev/ggsegArslan)
 <!-- badges: end -->
@@ -13,7 +24,7 @@ Arslan Atlas for the ggsegverse Ecosystem.
 
 ## Installation
 
-``` r
+```{r, eval = FALSE}
 # From r-universe
 install.packages("ggsegArslan", repos = "https://ggsegverse.r-universe.dev")
 
@@ -23,22 +34,18 @@ remotes::install_github("ggsegverse/ggsegArslan")
 ```
 
 ## Atlases
-
 ### arslan
-
+ 
 Arslan cortical parcellation.
 
-``` r
+```{r arslan}
 library(ggsegArslan)
 plot(arslan())
 ```
-
-<img src="man/figures/README-arslan-1.png" alt="" width="100%" /> \##
-Data source
+## Data source
 
 Annotation files on fsaverage5.
 
-- **Reference**: Arslan & Rueckert (2015)
-  [doi:10.1007/978-3-319-24574-4_6](https://doi.org/10.1007/978-3-319-24574-4_6)
+- **Reference**: Arslan & Rueckert (2015) [doi:10.1007/978-3-319-24574-4_6](https://doi.org/10.1007/978-3-319-24574-4_6)
 
 - **Date obtained**: 2021-10-15
