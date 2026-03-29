@@ -18,4 +18,5 @@
 #' @export
 #' @examples
 #' arslan()
+#' plot(arslan())
 arslan <- function() .arslan
