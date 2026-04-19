@@ -6,6 +6,7 @@
 #' [ggseg3d::ggseg3d()].
 #'
 #' @family ggseg_atlases
+#' @family cortical_atlases
 #'
 #' @references Arslan, S., & Rueckert, D. (2015, October).
 #'   Multi-level parcellation of the cerebral cortex using resting-state fMRI.
@@ -18,5 +19,5 @@
 #' @export
 #' @examples
 #' arslan()
-#' plot(arslan())
+#' \dontrun{plot(arslan())}
 arslan <- function() .arslan
