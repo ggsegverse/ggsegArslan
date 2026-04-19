@@ -36,7 +36,9 @@ arslan_n <- arslan_3d
 arslan_n <- unnest(arslan_n, ggseg_3d)
 arslan_n <- mutate(arslan_n,
                    region = gsub("LH_|RH_|region_", "", region),
-                   region = ifelse(grepl("Unknown|\\?", region, ignore.case = TRUE), NA, region),
+                    region = ifelse(
+                      grepl("Unknown|\\?", region, ignore.case = TRUE),
+                      NA, region),
                    atlas = "arslan_3d"
 )
 arslan_3d <- as_ggseg3d_atlas(arslan_n)
@@ -56,7 +58,7 @@ arslan <- make_ggseg3d_2_ggseg(arslan_3d,
                                output_dir = here::here("data-raw/"))
 plot(arslan)
 
-arslan %>%
+arslan |>
   ggseg(atlas = ., show.legend = TRUE,
         colour = "black",
         mapping = aes(fill=region)) +

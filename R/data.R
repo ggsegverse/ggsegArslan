@@ -19,5 +19,5 @@
 #' @export
 #' @examples
 #' arslan()
-#' plot(arslan())
+#' \dontrun{plot(arslan())}
 arslan <- function() .arslan
