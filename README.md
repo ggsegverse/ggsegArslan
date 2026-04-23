@@ -1,44 +1,60 @@
 
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegArslan
+# ggsegArslan <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml)
-[![r-universe](https://ggsegverse.r-universe.dev/badges/ggsegArslan)](https://ggsegverse.r-universe.dev/ggsegArslan)
+[![R-CMD-check](https://github.com/ggseg/ggsegArslan/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegArslan/actions)
+[![DOI](https://zenodo.org/badge/417483567.svg)](https://zenodo.org/badge/latestdoi/417483567)
 <!-- badges: end -->
 
-Arslan Atlas for the ggsegverse Ecosystem.
+This package contains dataset for plotting the
+[Arslan](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_6)
+atlas with ggseg and ggseg3d.
+
+Arslan, S., & Rueckert, D. (2015, October). Multi-level parcellation of
+the cerebral cortex using resting-state fMRI. In International
+Conference on Medical Image Computing and Computer-Assisted Intervention
+(pp. 47-54). Springer, Cham.
+
+To learn how to use these atlases, please look at the documentation for
+[ggseg](https://ggseg.github.io/ggseg/) and
+[ggseg3d](https://ggseg.github.io/ggseg3d).
 
 ## Installation
 
-``` r
-# From r-universe
-install.packages("ggsegArslan", repos = "https://ggsegverse.r-universe.dev")
+You can install the released version of ggsegArslan from
+[GitHub](https://github.com/) with:
 
-# From GitHub
+``` r
 # install.packages("remotes")
-remotes::install_github("ggsegverse/ggsegArslan")
+remotes::install_github("ggseg/ggsegArslan")
 ```
 
-## Atlases
-
-### arslan
-
-Arslan cortical parcellation.
+## Example
 
 ``` r
 library(ggsegArslan)
+library(ggseg)
+```
+
+``` r
 plot(arslan())
 ```
 
-<img src="man/figures/README-arslan-1.png" alt="" width="100%" /> \##
-Data source
+<img src="man/figures/README-2d-plot-1.png" style="width:100.0%" />
 
-Annotation files on fsaverage5.
+``` r
+library(ggseg3d)
 
-- **Reference**: Arslan & Rueckert (2015)
-  [doi:10.1007/978-3-319-24574-4_6](https://doi.org/10.1007/978-3-319-24574-4_6)
+ggseg3d(atlas = arslan()) |>
+  pan_camera("right lateral")
+```
 
-- **Date obtained**: 2021-10-15
+<img src="man/figures/README-3d-plot.png" style="width:100.0%" />
+
+Please note that the ‘ggsegArslan’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.

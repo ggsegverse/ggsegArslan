@@ -53,21 +53,12 @@ remotes::install_github("ggseg/ggsegArslan")
 #| label: libraries
 library(ggsegArslan)
 library(ggseg)
-library(ggplot2)
 ```
 
 ```{r}
 #| label: 2d-plot
 #| fig-height: 7
-ggplot() +
-  geom_brain(
-    atlas = arslan(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = arslan()$palette, na.value = "grey") +
-  theme_void()
+plot(arslan())
 ```
 
 ```{r}
