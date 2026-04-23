@@ -1,60 +1,66 @@
 
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md is generated from README.qmd. Please edit that file -->
 
 # ggsegArslan <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/ggseg/ggsegArslan/workflows/R-CMD-check/badge.svg)](https://github.com/ggseg/ggsegArslan/actions)
-[![DOI](https://zenodo.org/badge/417483567.svg)](https://zenodo.org/badge/latestdoi/417483567)
+[![R-CMD-check](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ggsegverse/ggsegArslan/actions/workflows/R-CMD-check.yaml)
+[![r-universe](https://ggseg.r-universe.dev/badges/ggsegArslan.png)](https://ggseg.r-universe.dev/ggsegArslan)
 <!-- badges: end -->
 
-This package contains dataset for plotting the
-[Arslan](https://link.springer.com/chapter/10.1007/978-3-319-24574-4_6)
-atlas with ggseg and ggseg3d.
+This package contains dataset for plotting the Arslan atlas with ggseg.
 
-Arslan, S., & Rueckert, D. (2015, October). Multi-level parcellation of
-the cerebral cortex using resting-state fMRI. In International
-Conference on Medical Image Computing and Computer-Assisted Intervention
-(pp. 47-54). Springer, Cham.
-
-To learn how to use these atlases, please look at the documentation for
-[ggseg](https://ggseg.github.io/ggseg/) and
-[ggseg3d](https://ggseg.github.io/ggseg3d).
+Arslan S & Rueckert D (2015). Multi-level parcellation of the cerebral
+cortex using resting-state fMRI. In *International Conference on Medical
+Image Computing and Computer-Assisted Intervention* (pp. 47-54).
+Springer, Cham.
 
 ## Installation
 
-You can install the released version of ggsegArslan from
-[GitHub](https://github.com/) with:
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
 
 ``` r
-# install.packages("remotes")
-remotes::install_github("ggseg/ggsegArslan")
+options(repos = c(
+  ggseg = "https://ggseg.r-universe.dev",
+  CRAN = "https://cloud.r-project.org"
+))
+
+install.packages("ggsegArslan")
 ```
 
-## Example
+You can install this package from [GitHub](https://github.com/) with:
 
 ``` r
-library(ggsegArslan)
+# install.packages("pak")
+pak::pak("ggsegverse/ggsegArslan")
+```
+
+## Arslan atlas
+
+``` r
 library(ggseg)
+library(ggsegArslan)
+library(ggplot2)
+
+ggplot() +
+  geom_brain(
+    atlas = arslan(),
+    mapping = aes(fill = label),
+    position = position_brain(hemi ~ view),
+    show.legend = FALSE
+  ) +
+  scale_fill_manual(values = arslan()$palette, na.value = "grey") +
+  theme_void()
 ```
 
-``` r
-plot(arslan())
-```
+<img src="man/figures/README-arslan-1.png" style="width:100.0%" />
 
-<img src="man/figures/README-2d-plot-1.png" style="width:100.0%" />
+## Data source
 
-``` r
-library(ggseg3d)
-
-ggseg3d(atlas = arslan()) |>
-  pan_camera("right lateral")
-```
-
-<img src="man/figures/README-3d-plot.png" style="width:100.0%" />
-
-Please note that the ‘ggsegArslan’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
+Arslan S & Rueckert D (2015). Multi-level parcellation of the cerebral
+cortex using resting-state fMRI. In *International Conference on Medical
+Image Computing and Computer-Assisted Intervention* (pp. 47-54).
+Springer, Cham.
