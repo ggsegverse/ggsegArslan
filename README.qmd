@@ -59,6 +59,7 @@ pak::pak("ggsegverse/ggsegArslan")
 #| label: arslan
 #| fig-height: 7
 library(ggseg)
+library(ggsegArslan)
 
 plot(arslan())
 ```
