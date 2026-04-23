@@ -33,17 +33,8 @@ pak::pak("ggsegverse/ggsegArslan")
 ``` r
 library(ggseg)
 library(ggsegArslan)
-library(ggplot2)
 
-ggplot() +
-  geom_brain(
-    atlas = arslan(),
-    mapping = aes(fill = label),
-    position = position_brain(hemi ~ view),
-    show.legend = FALSE
-  ) +
-  scale_fill_manual(values = arslan()$palette, na.value = "grey") +
-  theme_void()
+plot(arslan())
 ```
 
 ![](reference/figures/README-arslan-1.png)
