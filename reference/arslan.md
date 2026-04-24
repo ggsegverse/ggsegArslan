@@ -94,4 +94,5 @@ arslan()
 #> 48 right RH_region_23 rh_RH_region_23
 #> 49 right RH_region_24 rh_RH_region_24
 #> 50 right RH_region_25 rh_RH_region_25
+if (FALSE) plot(arslan()) # \dontrun{}
 ```
