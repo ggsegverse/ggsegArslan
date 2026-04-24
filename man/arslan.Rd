@@ -17,6 +17,7 @@ geometry for \code{\link[ggseg:ggbrain]{ggseg::geom_brain()}} and 3D vertex indi
 }
 \examples{
 arslan()
+\dontrun{plot(arslan())}
 }
 \references{
 Arslan, S., & Rueckert, D. (2015, October).
@@ -25,4 +26,5 @@ In International Conference on Medical Image Computing and
 Computer-Assisted Intervention (pp. 47-54). Springer, Cham.
 \doi{10.1007/978-3-319-24574-4_6}
 }
+\concept{cortical_atlases}
 \concept{ggseg_atlases}
