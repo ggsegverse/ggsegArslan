@@ -11,13 +11,13 @@ Source:
 [`DESCRIPTION`](https://github.com/ggsegverse/ggsegArslan/blob/main/DESCRIPTION)
 
 Mowinckel A (2026). *ggsegArslan: Arslan Atlas for the 'ggseg'
-Ecosystem*. R package version 2.0.1,
+Ecosystem*. R package version 2.0.2,
 <https://github.com/ggsegverse/ggsegArslan>.
 
     @Manual{,
       title = {ggsegArslan: Arslan Atlas for the 'ggseg' Ecosystem},
       author = {Athanasia Mo Mowinckel},
       year = {2026},
-      note = {R package version 2.0.1},
+      note = {R package version 2.0.2},
       url = {https://github.com/ggsegverse/ggsegArslan},
     }
